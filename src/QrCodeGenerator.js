@@ -29,26 +29,29 @@ const QRCodeGenerator = () => {
 
   };
 
+  
+
+
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex items-center justify-center h-screen">
       <div className="max-w-md p-8 bg-gray-100 rounded-lg shadow-lg w-80">
-        <h1 className="text-2xl font-bold mb-6 px-4" >QR Code Generator</h1>
+        <h1 className="px-4 mb-6 text-2xl font-bold" >QR Code Generator</h1>
         <input
           type="text"
           placeholder="Enter data"
           value={inputData}
           onChange={handleInputChange}
-          className="w-full px-4 py-2 border rounded-md mb-4"
+          className="w-full px-4 py-2 mb-4 border rounded-md"
         />
         {inputData && (
-          <div ref={qrCodeRef} className="mb-4 flex justify-center">
+          <div ref={qrCodeRef} className="flex justify-center mb-4">
            <QRCode value={inputData} size={128} />
           </div>
         )}
         {inputData && (
           <button
             onClick={handleDownloadClick}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-12 rounded"
+            className="px-12 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
           >
             Download QR Code
           </button>
